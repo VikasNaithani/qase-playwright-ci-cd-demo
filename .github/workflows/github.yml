@@ -31,8 +31,8 @@ jobs:
       # Step 4: Run tests with environment secrets
       - name: Run Playwright tests
         env:
-          QASE_TESTOPS_API_TOKEN: ${{ secrets.QASE_API_TOKEN }}
-          QASE_TESTOPS_PROJECT: ${{ secrets.QASE_PROJECT_CODE }}
+          QASE_TESTOPS_API_TOKEN: ${{ secrets.TOKEN }}
+          QASE_TESTOPS_PROJECT: ${{ secrets.PROJECTCODE }}
         run: npx playwright test 
 
       - name: Debug environment variables
