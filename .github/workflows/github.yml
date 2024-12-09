@@ -1,34 +1,26 @@
-name: Node.js CI
+name: Github to Qase
 
 on:
   push:
     branches:
-      - main    # Trigger workflow on pushes to the main branch
-  pull_request:
-    branches:
-      - main    # Trigger workflow on pull requests targeting the main branch
+      - main
 
 jobs:
-  build-and-test:
-    runs-on: ubuntu-latest  # Use the latest Ubuntu image for the environment
+  install_and_test:
+    runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository code
-      - name: Checkout code
+      - name: Check out the repository
         uses: actions/checkout@v3
 
-      # Step 2: Set up Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16   # Specify Node.js version
-          cache: 'npm'       # Cache npm dependencies
+          node-version: '16'
 
-      # Step 3: Install dependencies
       - name: Install dependencies
-        run: npm install
-
-      # Step 4: Run tests with environment secrets
+        run: |
+          npm install
       - name: Run Playwright tests
         env:
           QASE_TESTOPS_API_TOKEN: ${{ secrets.QASE_TESTOPS_API_TOKEN }}
