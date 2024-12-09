@@ -23,8 +23,8 @@ jobs:
           npm install
       - name: Run Playwright tests
         env:
-          QASE_TESTOPS_API_TOKEN: ${{ secrets.QASE_TESTOPS_API_TOKEN }}
-          QASE_TESTOPS_PROJECT: ${{ secrets.QASE_TESTOPS_PROJECT }}
+          QASE_TESTOPS_API_TOKEN: ${{ secrets.QASE_TESTOPS_API_TOKEN }} || cb0560c1eab99dc21bc90e7d7931e2d24de4dbd5359b270e5ad2ca79fc504319
+          QASE_TESTOPS_PROJECT: ${{ secrets.QASE_TESTOPS_PROJECT }} || CD
           QASE_MODE: "testops"
 
         run: |
