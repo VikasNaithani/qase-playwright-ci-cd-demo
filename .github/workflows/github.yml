@@ -29,3 +29,6 @@ jobs:
 
         run: |
           npx playwright test
+          
+      - name: List Environment Variables
+        run: printenv
