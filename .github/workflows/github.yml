@@ -1,4 +1,4 @@
-name: Github to Qase
+name: Github to QASE
 
 on:
   push:
