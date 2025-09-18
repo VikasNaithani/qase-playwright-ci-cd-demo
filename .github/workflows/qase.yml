@@ -1,4 +1,4 @@
-name: Qase to Github
+name: Qase to GithuB
 on:
   workflow_dispatch:
     inputs:
